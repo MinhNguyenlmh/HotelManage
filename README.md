@@ -1,4 +1,4 @@
 # HotelManage
--Nguyễn Anh Minh 
--Đặng Quang Huy
--Nguyễn Long Thủy
+- Nguyễn Anh Minh 
+- Đặng Quang Huy
+- Nguyễn Long Thủy
