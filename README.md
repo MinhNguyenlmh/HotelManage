@@ -1,2 +1,4 @@
 # HotelManage
-thành viên: Đặng Quang Huy, Nguyễn Anh Minh, Nguyễn Long Thủy. 
+-Nguyễn Anh Minh 
+-Đặng Quang Huy
+-Nguyễn Long Thủy
