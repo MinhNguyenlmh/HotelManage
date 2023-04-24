@@ -1,5 +1,5 @@
 
-package quanlykhachsan;
+package hotelmanager;
 
 import javax.swing.*;
 import java.awt.*;
