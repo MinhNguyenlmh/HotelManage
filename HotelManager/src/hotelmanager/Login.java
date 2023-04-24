@@ -82,7 +82,7 @@ public class Login extends JFrame implements ActionListener{
                     setVisible(false);
                     new Dashboard();
                 }else{
-                    JOptionPane.showMessageDialog(null, "Invakid us or password");
+                    JOptionPane.showMessageDialog(null, "Invalid us or password");
                     setVisible(false);
                 }
             }catch (Exception e){
