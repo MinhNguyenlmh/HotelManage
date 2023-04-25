@@ -47,7 +47,7 @@ public class Dashboard extends JFrame {
         addrooms.addActionListener(this);
         admin.add(addrooms );
         
-        JMenuItem addrives = new JMenuItem("ADD DRIVERS");
+        JMenuItem addrives = new JMenuItem("THÊM LÁI XE");
         admin.add(addrives);
         
         setVisible(true);
@@ -57,7 +57,8 @@ public class Dashboard extends JFrame {
             new AddEmployee();
         }else if(ae.getActionCommand().equals("THÊM PHÒNG")){
             new AddRooms();
-        }
+        }else if(ae.getActionCommand().equals("THÊM LÁI XE")){
+            new AddDriver();
     }
     public static void main(String[] args){
         new Dashboard();
