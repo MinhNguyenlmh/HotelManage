@@ -1,144 +1,142 @@
 package hotelmanager;
-
-import java.awt.event.ActionListener;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-
 public class AddDriver extends JFrame implements ActionListener {
-
+    JLabel heading, lblname, lblavailable , lblcompany, lblmodel, lblage, lbllocation;
     JButton add, cancel;
-    JTextField tfname, tfage, tfcompany, tfmodel, tflocation;
-    JComboBox typecombo, availablecombo, gendercombo;
-
+    JTextField tfname, tfcompany, tfage, tfmodel, tflocation ;
+    JComboBox  drivercombo, gendercombo;
     AddDriver(){
+        
         getContentPane().setBackground(Color.WHITE);
+        setBounds(300, 200, 980, 560);
         setLayout(null);
-
-        JLabel heading  = new JLabel("Add Drivers");
-        heading.setFont(new Font("Tahoma", Font.BOLD, 18));
-        heading.setBounds(150, 10, 200, 20);
+        
+        heading = new JLabel("THÊM TÀI XẾ");
+        heading.setFont(new Font("Tahoma", Font.BOLD, 22));
+        heading.setBounds(150, 20, 200, 30);
         add(heading);
-
-        JLabel lblroomno  = new JLabel("Name");
-        lblroomno.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        lblroomno.setBounds(60, 70, 120, 30);
-        add(lblroomno);
-
+        
+        // name
+        lblname = new JLabel("Tên");
+        lblname.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        lblname.setBounds(60, 90, 120, 30);
+        add(lblname);
         tfname = new JTextField();
-        tfname.setBounds(200, 70, 150, 30);
+        tfname.setBounds(200, 90, 200, 30);
         add(tfname);
-
-        JLabel lblage = new JLabel("Age");
+        
+        // tuổi
+        lblage = new JLabel("Tuổi");
         lblage.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        lblage.setBounds(60, 110, 120, 30);
+        lblage.setBounds(60, 140, 120, 30);
         add(lblage);
-
         tfage = new JTextField();
-        tfage.setBounds(200, 110, 150, 30);
+        tfage.setBounds(200, 140, 200, 30);
         add(tfage);
-
-        JLabel lblclean = new JLabel("Gender");
-        lblclean.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        lblclean.setBounds(60, 150, 120, 30);
-        add(lblclean);
-
-        String cleanOptions [] = {"Male", "Female"};
-        gendercombo = new JComboBox<>(cleanOptions);
-        gendercombo.setBounds(200, 150, 150, 30);
-		gendercombo.setBackground(Color.WHITE);  
+        
+        // giới tính
+        lblage = new JLabel("Giới Tính");
+        lblage.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        lblage.setBounds(60, 190, 120, 30);
+        add(lblage);
+        String cleanOptions[] = { "Nam", "Nữ"};
+        gendercombo = new JComboBox(cleanOptions);
+        gendercombo.setBounds(200, 190, 200, 30);
+        gendercombo.setBackground(Color.WHITE);
         add(gendercombo);
-
-        JLabel lblprice  = new JLabel("Car Company");
-        lblprice.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        lblprice.setBounds(60, 190, 120, 30);
-        add(lblprice);
-
+        
+        // o tô
+        lblcompany = new JLabel("Hãng xe");
+        lblcompany.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        lblcompany.setBounds(60, 240, 120, 30);
+        add(lblcompany);
         tfcompany = new JTextField();
-        tfcompany.setBounds(200, 190, 150, 30);
+        tfcompany.setBounds(200, 240, 200, 30);
         add(tfcompany);
-
-        JLabel lbltype = new JLabel("Car Model");
-        lbltype.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        lbltype.setBounds(60, 230, 120, 30);
-        add(lbltype);
-
+        
+        // mẫu xe
+        lblmodel = new JLabel("Tên loại xe");
+        lblmodel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        lblmodel.setBounds(60, 290, 120, 30);
+        add(lblmodel);
         tfmodel = new JTextField();
-        tfmodel.setBounds(200, 230, 150, 30);
+        tfmodel.setBounds(200, 290, 200, 30);
         add(tfmodel);
-
-		JLabel lblavailable = new JLabel("Available");
+        
+        // trang thái xe
+        lblavailable = new JLabel("Trạng thái");
         lblavailable.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        lblavailable.setBounds(60, 270, 120, 30);
+        lblavailable.setBounds(60, 340, 120, 30);
         add(lblavailable);
-
-        String driverOptions [] = {"Available", "Busy"};
-        availablecombo = new JComboBox<>(driverOptions);
-        availablecombo.setBounds(200, 270, 150, 30);
-        availablecombo.setBackground(Color.WHITE);  
-        add(availablecombo);
-
-		JLabel lbllocation = new JLabel("Location");
+        String driverOptions[] = {"Trống", "Đã có"};
+        drivercombo = new JComboBox(driverOptions);
+        drivercombo.setBounds(200, 340, 200, 30);
+        drivercombo.setBackground(Color.WHITE);
+        add(drivercombo);
+        
+        // location
+        lbllocation = new JLabel("Ví trí");
         lbllocation.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        lbllocation.setBounds(60, 310, 120, 30);
+        lbllocation.setBounds(60, 390, 120, 30);
         add(lbllocation);
-
         tflocation = new JTextField();
-        tflocation.setBounds(200, 310, 150, 30);
+        tflocation.setBounds(200, 390, 200, 30);
         add(tflocation);
-
-        add = new JButton("Add Driver");
+        
+        add = new JButton("Thêm");
         add.setForeground(Color.WHITE);
         add.setBackground(Color.BLACK);
-        add.setBounds(60, 370, 130, 30);
+        add.setBounds(80, 450, 130, 30);
         add.addActionListener(this);
         add(add);
-
-        cancel = new JButton("Cancel");
+        
+        cancel = new JButton("Thoát");
         cancel.setForeground(Color.WHITE);
         cancel.setBackground(Color.BLACK);
-        cancel.setBounds(220, 370, 130, 30);
+        cancel.setBounds(250, 450, 130, 30);
         cancel.addActionListener(this);
         add(cancel);
-
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/"));
-		Image i2  = i1.getImage().getScaledInstance(500, 300, Image.SCALE_DEFAULT);
-		ImageIcon i3 = new ImageIcon(i2);
+        
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/image7.jpg"));
+        Image i2 = i1.getImage().getScaledInstance(500, 320, Image.SCALE_DEFAULT);
+        ImageIcon i3 = new ImageIcon(i2);
         JLabel image = new JLabel(i3);
-        image.setBounds(400, 30, 500, 300);
+        image.setBounds(480, 100, 470, 300);
         add(image);
-
-        setBounds(300, 200, 980, 470);
+        
         setVisible(true);
-
     }
-
+    
     public void actionPerformed(ActionEvent ae){
-        if (ae.getSource() == add){
+        if(ae.getSource() == add){
             String name = tfname.getText();
             String age = tfage.getText();
             String gender = (String) gendercombo.getSelectedItem();
             String company = tfcompany.getText();
             String brand = tfmodel.getText();
-			String available = (String) availablecombo.getSelectedItem();
-			String location = tflocation.getText();
-
-            try {
-                Conn conn =new Conn();
-                String str  = "Insert into driver value('"+name+"', '"+age+"', '"+gender+"', '"+company+"', '"+brand+"', '"+available+"', '"+location+"')";
-				conn.s.executeUpdate(str);
-				JOptionPane.showMessageDialog(null, "New Driver Added Succesfully");
+            String available = (String) drivercombo.getSelectedItem();
+            String location = tflocation.getText();
+            try{
+                Conn conn = new Conn();
+                String str = "Thêm vào('"+name+"', '"+age+"', '"+gender+"', '"+company+"', '"+brand+"', '"+available+"', '"+location+"')";
+                
+                conn.s.executeUpdate(str);
+                
+                JOptionPane.showMessageDialog(null,"Thêm lái xe mới thành công");
+                
+                setVisible(false);
             }catch (Exception e){
                 e.printStackTrace();
             }
-        } else{
+        }
+        else{
             setVisible(false);
         }
     }
-
     public static void main(String[] args){
-            new AddDriver();
-
+        new AddDriver();
     }
 }
+
