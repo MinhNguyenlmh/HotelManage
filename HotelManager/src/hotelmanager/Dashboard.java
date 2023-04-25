@@ -32,19 +32,32 @@ public class Dashboard extends JFrame {
         mb.add(hotel);
         
         JMenuItem reception = new JMenuItem("RECEPTION");
+        reception.addActionListener(this);
         hotel.add(reception);
         
         JMenu admin = new JMenu("ADMIN");
         hotel.setForeground(Color.BLUE);
         mb.add(admin);
-        JMenuItem addemployee = new JMenuItem("ADD EMPLOYEE");
+        
+        JMenuItem addemployee = new JMenuItem("THÊM NHÂN VIÊN");
+        addemployee.addActionListener(this);
         admin.add(addemployee);
-        JMenuItem addrooms = new JMenuItem("ADD ROOMS");
+        
+        JMenuItem addrooms = new JMenuItem("THÊM PHÒNG ");
+        addrooms.addActionListener(this);
         admin.add(addrooms );
-        JMenuItem addrives = new JMenuItem("ADD EMPLOYEE");
+        
+        JMenuItem addrives = new JMenuItem("ADD DRIVERS");
         admin.add(addrives);
         
         setVisible(true);
+        
+        public void actionPerformed(ActionEvent ae){
+        if (ae.getActionCommand().equals("THÊM NHÂN VIÊN")){
+            new AddEmployee();
+        }else if(ae.getActionCommand().equals("THÊM PHÒNG")){
+            new AddRooms();
+        }
     }
     public static void main(String[] args){
         new Dashboard();
