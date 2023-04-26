@@ -17,7 +17,7 @@ public class DashBoard extends JFrame{
         image.setBounds(0,0,1550,1000);
         add(image);
         
-        JLabel text = new JLabel("The HM Group Welcomes you");
+        JLabel text = new JLabel(" H&M xin chào quý ");
         text.setBounds(400,80,1000,50);
         text.setFont(new Font("Tahoma", Font.PLAIN,45));
         text.setForeground(Color.RED);
@@ -35,17 +35,17 @@ public class DashBoard extends JFrame{
         JMenu reception = new JMenu("Reception");
         hotel.add(reception);
         
-        JMenu admin = new JMenu("Admin");
+        JMenu admin = new JMenu("Người điều hành");
         admin.setForeground(Color.GREEN);
         mb.add(admin);
         
-        JMenuItem addemployee = new JMenuItem("Add Employee");
+        JMenuItem addemployee = new JMenuItem("thêm nhân viên");
         admin.add(addemployee);
       
-        JMenuItem addroom = new JMenuItem("Add Room");
+        JMenuItem addroom = new JMenuItem("thêm phòng");
         admin.add(addroom);
         
-        JMenuItem adddriver = new JMenuItem("Add Drivers");
+        JMenuItem adddriver = new JMenuItem("thêm tài xế");
         admin.add(adddriver);
         
         setVisible(true);
