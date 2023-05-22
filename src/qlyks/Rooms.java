@@ -585,8 +585,6 @@ public class Rooms extends javax.swing.JFrame {
 
     private void RRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RRefreshActionPerformed
         ShowRooms();
-        RVip.setSelectedIndex(0);
-        RFree.setSelectedIndex(0);
     }//GEN-LAST:event_RRefreshActionPerformed
 
     private void RFreeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_RFreeItemStateChanged
