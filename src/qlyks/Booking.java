@@ -57,7 +57,7 @@ public class Booking extends javax.swing.JFrame {
                 String S = "Booked";
                 Con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qlykss","root","Huydvs1403");
         
-                PreparedStatement Save = Con.prepareStatement("Update Rooms set Status = ? where RNumber = ?");
+                PreparedStatement Save = Con.prepareStatement("Update Rooms set Status = ? whNameName = ?");
                 Save.setInt(2, Integer.valueOf(BRoom.getSelectedItem().toString()));
                 Save.setString(1, S);
                 
@@ -76,7 +76,7 @@ public class Booking extends javax.swing.JFrame {
                 String S = "Free";
                 Con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qlykss","root","Huydvs1403");
         
-                PreparedStatement Save = Con.prepareStatement("Update Rooms set Status = ? where RNumber = ?");
+                PreparedStatement Save = Con.prepareStatement("Update Rooms set Status = ? where  = ?");
                 Save.setInt(2, R);
                 Save.setString(1, S);
                 
@@ -531,7 +531,7 @@ public class Booking extends javax.swing.JFrame {
             try {
                 String Bdate = BDate.getDate().toString().substring(0, 11);
                 CountBookings();
-                Con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qlykss?autoReconnectForPools=false&useSSL=false","root","Huydvs1403");
+                Con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qlykss","root","Huydvs1403");
                 PreparedStatement Save = Con.prepareStatement("insert into Booking values(?,?,?,?,?,?)");
                 Save.setInt(1, Bid);
                 Save.setInt(2, Integer.valueOf(BRoom.getSelectedItem().toString()));
