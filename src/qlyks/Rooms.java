@@ -483,39 +483,34 @@ public class Rooms extends javax.swing.JFrame {
     
     private void REditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_REditActionPerformed
   
-       if (RName.getText().isEmpty() || RCategory.getSelectedIndex() == -1 || RStatus.getSelectedIndex() == -1 || RPrice.getText().isEmpty()) {
+       
+        if (RName.getText().isEmpty() || RCategory.getSelectedIndex() == -1 || RStatus.getSelectedIndex() == -1 || RPrice.getText().isEmpty())
+        {
             JOptionPane.showMessageDialog(this, "Missing Data!");
-        } else {
+        }
+        else {
             try {
                 CountRooms();
-                Con = DriverManager.getConnection("jdbc:mysql://localhost:3306/qlykss","root","Huydvs1403");
-
-                // Kiểm tra dữ liệu đã tồn tại hay chưa
-                String query = "SELECT * FROM Rooms WHERE name = ?";
-                PreparedStatement checkData = Con.prepareStatement(query);
-                checkData.setString(1, RName.getText().toString());
-                ResultSet rs = checkData.executeQuery();
-                if (rs.next()) {
-                    JOptionPane.showMessageDialog(this, "Data already exists!");
-                } else {
-                    // Thêm dữ liệu nếu chưa tồn tại
-                    PreparedStatement Save = Con.prepareStatement("Update Rooms set Name = ?,Type = ?, Status = ?,Price = ? where RNumber = ?");
+                Con = DriverManager.getConnection("jdbc:mysql://localhost:3306/","root","Huydvs1403");
+                PreparedStatement Save = Con.prepareStatement("update Rooms set RNumber = ?,Type = ?, Status = ?,Price = ? where Name = ?");
+                
                     Save.setInt(1, Rid);
-                    Save.setString(2, RName.getText().toString());
-                    Save.setString(3, RCategory.getSelectedItem().toString());
-                    Save.setString(4, RStatus.getSelectedItem().toString());
-                    Save.setInt(5, Integer.valueOf(RPrice.getText().toString()));
+                    Save.setString(5, RName.getText().toString());
+                    Save.setString(2, RCategory.getSelectedItem().toString());
+                    Save.setString(3, RStatus.getSelectedItem().toString());
+                    Save.setInt(4, Integer.valueOf(RPrice.getText().toString()));
+                    
                     int row = Save.executeUpdate();
-                    JOptionPane.showMessageDialog(this, "Room Added!");
-                    Con.close();
+                    JOptionPane.showMessageDialog(this, "Room Update!");
                     ShowRooms();
                     RName.setText("");
-                    RPrice.setText("");   
+                    RPrice.setText("");  
+                    Con.close();
                 }
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(this, ex);
-            }
-        }
+                catch (SQLException ex) {
+                 JOptionPane.showMessageDialog(this, ex);
+                }
+            } 
     }//GEN-LAST:event_REditActionPerformed
 
     int Key = 0;
