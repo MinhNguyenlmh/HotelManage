@@ -480,7 +480,7 @@ public class Dashboardd extends javax.swing.JFrame {
             Rs = St.executeQuery("select Count(*) from Employee");
             Rs.next();
             E = Rs.getInt(1);
-            DEmployee.setText(+" People");
+            DEmployee.setText(E+" People");
         }catch(Exception e){    
             JOptionPane.showMessageDialog(this, e);
         }
