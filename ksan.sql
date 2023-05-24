@@ -1,5 +1,5 @@
-create database  if not exists ksan;
-use ksan;
+create database  if not exists qlykss;
+use qlykss;
 
 create table if not exists Rooms(
 	RNumber int,
